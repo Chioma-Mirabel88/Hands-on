@@ -152,9 +152,9 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
 # Launch Template
 resource "aws_launch_template" "web_lt" {
   name_prefix   = "web-template-"
-  image_id      = "ami-06aa3f7caf3a30282"  # Update with your AMI ID
+  image_id      = "ami-020cba7c55df1f615"  # Update with your AMI ID
   instance_type = "t2.micro"
-  key_name = "valKP"
+  key_name = "Talentkp"
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
@@ -178,7 +178,7 @@ resource "aws_autoscaling_group" "web_asg" {
   }
 
   tag {
-    key                 = "Name"
+    key                 = "Talentkp"
     value               = "web-instance"
     propagate_at_launch = true
   }
